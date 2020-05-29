@@ -1,6 +1,6 @@
 main.py
 from flask import Flask, flash, redirect, render_template, request, session, abort
-from random import randint #random is module, randit is a function from that module
+from random import randint 
 import json
 import WNLCInterface as wlnc
 
@@ -23,7 +23,6 @@ def trainResult():
     CLFName = request.form['classifiername']
     NLCService = wlnc.getNLCService(ServiceUserName, ServicePW)
     status = wlnc.listClassifiers(NLCService)
-    # status = wlnc.createClassifier(NLCService, CLFName, FilePath)
     return render_template(
         'trainResult.html',**locals())
 
